@@ -1,15 +1,22 @@
 import './App.css';
 import ScoreContainer from './containers/ScoreContainer';
 import VideoContainer from './containers/VideoContainer';
+import { Container, Col, Row } from 'react-bootstrap'
 
 
 function App() {
 
   return (
-    <div className="App">
-      <ScoreContainer />
-      <VideoContainer />
-    </div>
+    <Container className="App">
+      <Row>
+      <Col>
+        <ScoreContainer />
+      </Col>
+      <Col>
+        <VideoContainer />
+      </Col>
+      </Row>
+    </Container>
   );
 }
 
