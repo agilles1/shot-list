@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import pdf from '../beethoven-1.pdf'
+import { Button } from 'react-bootstrap'
 
 function ScoreContainer() {
 
@@ -17,7 +18,7 @@ function ScoreContainer() {
         <Page pageNumber={pageNumber} />
       </Document>
       <div>
-          <button/>
+          <Button />
           Page {pageNumber} of {numPages}</div>
     </div>
   );
