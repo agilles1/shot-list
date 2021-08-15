@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import pdf from '../beethoven-1.pdf'
-import { Button } from 'react-bootstrap'
+import { Col, Button, Row } from 'react-bootstrap'
 
 function ScoreContainer() {
 
@@ -13,14 +13,19 @@ function ScoreContainer() {
     }
 
   return (
-    <div>
-      <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess}>
-        <Page pageNumber={pageNumber} />
-      </Document>
-      <div>
-          <Button />
-          Page {pageNumber} of {numPages}</div>
-    </div>
+    <Row>
+      <Col>
+        <Button onClick={() => setPageNumber(pageNumber - 1)}>{"<<"}</Button>
+      </Col>
+      <Col>
+        <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess}>
+          <Page size="A6" pageNumber={pageNumber} />
+        </Document>
+      </Col>
+      <Col>
+        <Button onClick={() => setPageNumber(pageNumber + 1)}>{">>"}</Button>
+      </Col>
+    </Row>
   );
 
 }
