@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import pdf from '../beethoven-5.pdf'
 import { Col, Button, Row } from 'react-bootstrap'
-import ShotContainer from './ShotContainer';
 
 function ScoreContainer() {
 
@@ -16,7 +15,7 @@ function ScoreContainer() {
   return (
     <Row>
       <Col>
-        <Button onClick={() => setPageNumber(pageNumber - 1)}>{"<<"}</Button>
+        <Button onClick={() => {if (pageNumber > 1) {setPageNumber(pageNumber - 1)} }} >{"<<"}</Button>
       </Col>
       <Col>
           <Document file={pdf} onLoadSuccess={onDocumentLoadSuccess}>
