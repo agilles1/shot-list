@@ -1,6 +1,7 @@
 import './App.css';
 import ScoreContainer from './containers/ScoreContainer';
 import VideoContainer from './containers/VideoContainer';
+import ShotContainer from './containers/ShotContainer';
 import { Container, Col, Row, Navbar, Nav } from 'react-bootstrap'
 
 
@@ -8,7 +9,7 @@ function App() {
 
   return (
     <Container fluid className="App">
-      <Row>
+      {/* <Row>
         <Navbar>
           <Container>
             <Nav className="me-auto">
@@ -18,15 +19,16 @@ function App() {
             </Nav>
           </Container>
         </Navbar>
-      </Row>
+      </Row> */}
      <Row>
       <Col> 
         <ScoreContainer />
       </Col>
-     <Col xs={5}>
+      
+      <Col xs={5}>
         <VideoContainer />
       </Col>
-     </Row>
+    </Row>
     </Container>
   );
 }
